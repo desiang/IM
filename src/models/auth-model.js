@@ -15,7 +15,7 @@ const createUserTable = async () => {
   await db.query(sql);
 };
 
-const ifEmailExists = async (email) => {
+const emailExists = async (email) => {
   const normalizedEmail = email.trim().toLowerCase();
 
   const user = await db.query(`SELECT * FROM users WHERE email = ?`, [
